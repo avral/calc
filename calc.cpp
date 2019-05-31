@@ -12,7 +12,7 @@ class [[eosio::contract]] calc : public eosio::contract {
          _results(receiver, receiver.value){};
 
       [[eosio::action]]
-      void calculate(const uint64_t x) {
+      void calculate(const uint64_t& x) {
          uint64_t result = x * 8;
          
          _results.emplace(_self, [&]( auto& r ) {
